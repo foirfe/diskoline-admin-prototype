@@ -1,0 +1,44 @@
+.sidenav {
+    width: 250px;
+    transition: width 0.3s ease-in-out;
+    height: 100vh;
+    background-color: #fff;
+    padding-top: 28px;
+    box-shadow: 8px -1px 32px -17px rgba(0,0,0,0.59);
+}
+.sidenavClosed {
+    composes: sidenav;
+    transition: width 0.3s ease-in-out;
+    width: 60px
+}
+.sideitem {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: #979696;
+    text-decoration: none;
+    overflow: hidden;
+    font-weight: bold;
+}
+.sideitem:global.active{
+    color: #283F6C;
+}
+.linkText {
+    padding-left: 16px;
+}
+
+.sideitem:hover {
+    background-color: #244f7d1c;
+    color: #283F6C;
+}
+.menuBtn {
+    align-self: center;
+    align-self: flex-start;  
+    justify-self: flex-end;
+    color: #979696;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding-left: 20px;
+}

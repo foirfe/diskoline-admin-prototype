@@ -1,0 +1,15 @@
+.topbar {
+    background-color: $main-color;
+    display: flex;
+    justify-content: space-between;
+    height: 7vh;
+    color: $white;
+    .menu-container{
+        padding-right: 4%;
+    }
+    .topbar-image{
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
