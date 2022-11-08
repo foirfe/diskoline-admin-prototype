@@ -19,17 +19,19 @@ export default function StopsIndex(){
     
 
 
-
     return(
-        <div>
+        <div className="index_page">
             <h1>Stoppesteder</h1>
             <h2>Vælg Område</h2>
+            <h3>Ruter</h3>
+            <div className="areas">
             {areas.map(area=>(
-            <div key={area.danish_name} className="area">
+                <div key={area.danish_name} className="area">
                 <h1>{area.danish_name}</h1>
                 <img src={area.image_path} alt={area.danish_name}/>
             </div>
             ))}
+            </div>
         </div>
     )
 }

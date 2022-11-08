@@ -157,4 +157,11 @@ button {
 .public_page form {
   width: 50%;
   margin: 0 auto;
+}
+
+.index_page .areas {
+  display: flex;
+}
+.index_page .areas img {
+  width: 40%;
 }/*# sourceMappingURL=style.css.map */
