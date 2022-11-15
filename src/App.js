@@ -1,69 +1,81 @@
-import { useState } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
-import './style/style.css';
-import { auth } from './firebaseConfig';
-import Topbar from './components/Topbar';
-import Sidebar from './components/Sidebar';
+import "./style/style.css";
+import { auth } from "./firebaseConfig";
+import Topbar from "./components/Topbar";
+import Sidebar from "./components/Sidebar";
 //Pages
-import SignInPage from './pages/SignInPage';
-import Dashboard from './pages/Dashboard';
-import StopsIndex from './pages/stops/StopsIndex';
-import RoutesIndex from './pages/routes/RoutesIndex';
-import PricetableIndex from './pages/pricetables/PricetablesIndex';
-import TimetablesIndex from './pages/timetables/TimetablesIndex';
-import SailingTimesIndex from './pages/sailingtimes/SailingTimesIndex';
-import ForgottenPassword from './pages/ForgottenPassword';
+import SignInPage from "./pages/SignInPage";
+import Dashboard from "./pages/Dashboard";
+import StopsIndex from "./pages/stops/StopsIndex";
+import RoutesIndex from "./pages/routes/RoutesIndex";
+import PricetableIndex from "./pages/pricetables/PricetablesIndex";
+import TimetablesIndex from "./pages/timetables/TimetablesIndex";
+import SailingTimesIndex from "./pages/sailingtimes/SailingTimesIndex";
+import ForgottenPassword from "./pages/ForgottenPassword";
+import StopsArea from "./pages/stops/StopsArea";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
+  const [areaSelected, setAreaSelected] = useState(false);
   const getauth = auth;
 
+  useEffect(() => {
+    function handleareaSelected() {
+      if (localStorage.getItem("area").length > 0) {
+        setAreaSelected(true);
+      }
+    }
+    handleareaSelected();
+  });
+  console.log(areaSelected);
   onAuthStateChanged(getauth, (user) => {
     if (user) {
-       setIsAuth(true);
-       localStorage.setItem("isAuth", true);
+      setIsAuth(true);
+      localStorage.setItem("isAuth", true);
     } else {
-       setIsAuth(false);
-       localStorage.removeItem("isAuth");
+      setIsAuth(false);
+      localStorage.removeItem("isAuth");
     }
- });
+  });
 
- const privateRoutes = (
-  <div>
-      <Topbar/>
-      <div className='app'>
-      <Sidebar/>
-    <Routes>
-      <Route path="/forside" element={<Dashboard/>}/>
-      <Route path="*" element={<Navigate to="/forside" />} />
-      {/* STOPPESTEDER */}
-      <Route path="/stoppesteder" element={<StopsIndex/>}/>
-      {/*RUTER */}
-      <Route path="/ruter" element={<RoutesIndex />}/>
-      {/* PRISTABELLER */}
-    <Route path="/pristabeller" element={<PricetableIndex/>}/>
-      {/* FARTPLANER */}
-      <Route path='/fartplaner' element={<TimetablesIndex/>}/>
-        {/* SEJLTIDER */}
-        <Route path='/sejltider' element={<SailingTimesIndex/>}/>
-    </Routes>
+  const privateRoutes = (
+    <div>
+      <Topbar />
+      <div className="app">
+        <Sidebar />
+        <Routes>
+          <Route path="/forside" element={<Dashboard />} />
+          {/*<Route path="*" element={<Navigate to="/forside" />} />*/}
+          {/* STOPPESTEDER */}
+          <Route
+            path="/stoppesteder"
+            element={areaSelected ? <StopsArea /> : <StopsIndex />}
+          />
+          {/*RUTER */}
+          <Route path="/ruter" element={<RoutesIndex />} />
+          {/* PRISTABELLER */}
+          <Route path="/pristabeller" element={<PricetableIndex />} />
+          {/* FARTPLANER */}
+          <Route path="/fartplaner" element={<TimetablesIndex />} />
+          {/* SEJLTIDER */}
+          <Route path="/sejltider" element={<SailingTimesIndex />} />
+        </Routes>
+      </div>
     </div>
-  </div>
- );
-
- const publicRoutes = (
-  <div>
-    <Routes>
-      <Route path="/" element={<SignInPage/>}/>
-      <Route path="/glemt-kode" element={<ForgottenPassword/>}/>
-    </Routes>
-  </div>
- )
-
-  return (
-  <main>{isAuth ? privateRoutes : publicRoutes}</main>
   );
+
+  const publicRoutes = (
+    <div>
+      <Routes>
+        <Route path="/" element={<SignInPage />} />
+        <Route path="/glemt-kode" element={<ForgottenPassword />} />
+      </Routes>
+    </div>
+  );
+
+  return <main>{isAuth ? privateRoutes : publicRoutes}</main>;
 }
 
 export default App;
