@@ -4,6 +4,7 @@ import { areasRef } from "../../firebaseConfig";
 
 export default function StopsIndex() {
   const [areas, setAreas] = useState([]);
+  const [selectedArea, setSelectedArea] = useState("");
 
   useEffect(() => {
     const q = query(areasRef, orderBy("danish_name")); // order by: name
@@ -17,8 +18,10 @@ export default function StopsIndex() {
     return () => unsubscribe(); // tell the post component to unsubscribe from listen on changes from firestore
   }, []);
 
-  function handleLocalStorage(area) {
-    localStorage.setItem("area", area);
+  function handleLocalStorage(e) {
+    setSelectedArea(e.target.param);
+    console.log(selectedArea) ;
+    localStorage.setItem("area", selectedArea);
   }
 
   return (
@@ -31,7 +34,7 @@ export default function StopsIndex() {
           <div
             key={area.danish_name}
             className="area"
-            onClick={handleLocalStorage(area.param)}
+            onClick={handleLocalStorage}
           >
             <h1>{area.danish_name}</h1>
             <img src={area.image_path} alt={area.danish_name} />

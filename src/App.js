@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     function handleareaSelected() {
-      if (localStorage.getItem("area").length > 0) {
+      if (localStorage.getItem("area")) {
         setAreaSelected(true);
       }
     }
