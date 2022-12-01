@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import BackButton from "../../components/BackButton";
 import { areasRef } from "../../firebaseConfig";
 
-export default function StopsArea() {
+export default function TimetableArea() {
   const [area, setArea] = useState("");
 
   useEffect(() => {
@@ -21,9 +21,9 @@ export default function StopsArea() {
   }, []);
 
   return (
-    <div className="areselectedpage stopspage">
+    <div className="areselectedpage timetable_page">
       <BackButton />
-      <h1>Stoppesteder</h1>
+      <h1>Fartplaner</h1>
       <h2>{area.danish_name}</h2>
     </div>
   );

@@ -15,6 +15,7 @@ import TimetablesIndex from "./pages/timetables/TimetablesIndex";
 import SailingTimesIndex from "./pages/sailingtimes/SailingTimesIndex";
 import ForgottenPassword from "./pages/ForgottenPassword";
 import StopsArea from "./pages/stops/StopsArea";
+import TimetableArea from "./pages/timetables/TimetableArea";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -58,7 +59,10 @@ function App() {
           {/* PRISTABELLER */}
           <Route path="/pristabeller" element={<PricetableIndex />} />
           {/* FARTPLANER */}
-          <Route path="/fartplaner" element={<TimetablesIndex />} />
+          <Route
+            path="/fartplaner"
+            element={areaSelected ? <TimetableArea /> : <TimetablesIndex />}
+          />
           {/* SEJLTIDER */}
           <Route path="/sejltider" element={<SailingTimesIndex />} />
         </Routes>
