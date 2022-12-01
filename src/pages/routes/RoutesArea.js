@@ -25,6 +25,7 @@ export default function RoutesArea() {
       <BackButton />
       <h1>Ruter</h1>
       <h2>{area.danish_name}</h2>
+      <button>Tilføj ny rute</button>
     </div>
   );
 }

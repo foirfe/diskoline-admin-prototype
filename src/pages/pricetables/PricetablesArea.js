@@ -25,6 +25,7 @@ export default function PricetablesArea() {
       <BackButton />
       <h1>Pristabeller</h1>
       <h2>{area.danish_name}</h2>
+      <button>Ny pristabel</button>
     </div>
   );
 }

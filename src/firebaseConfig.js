@@ -12,7 +12,7 @@ const firebaseConfig = {
   projectId: "disko-line",
   storageBucket: "disko-line.appspot.com",
   messagingSenderId: "81969431741",
-  appId: "1:81969431741:web:6afe400af3d3e46663e3d4"
+  appId: "1:81969431741:web:6afe400af3d3e46663e3d4",
 };
 
 // Initialize Firebase
@@ -24,3 +24,4 @@ export const auth = getAuth(app);
 //Database Collection
 export const usersRef = collection(db, "users");
 export const areasRef = collection(db, "omraader");
+export const stopsRef = collection(db, "omraader");

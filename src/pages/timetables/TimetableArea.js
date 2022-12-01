@@ -25,6 +25,7 @@ export default function TimetableArea() {
       <BackButton />
       <h1>Fartplaner</h1>
       <h2>{area.danish_name}</h2>
+      <button>Ny fartplan</button>
     </div>
   );
 }
