@@ -16,6 +16,9 @@ import SailingTimesIndex from "./pages/sailingtimes/SailingTimesIndex";
 import ForgottenPassword from "./pages/ForgottenPassword";
 import StopsArea from "./pages/stops/StopsArea";
 import TimetableArea from "./pages/timetables/TimetableArea";
+import RoutesArea from "./pages/routes/RoutesArea";
+import PricetablesArea from "./pages/pricetables/PricetablesArea";
+import SailingTimesArea from "./pages/sailingtimes/SailingTimesArea";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -55,16 +58,27 @@ function App() {
             element={areaSelected ? <StopsArea /> : <StopsIndex />}
           />
           {/*RUTER */}
-          <Route path="/ruter" element={<RoutesIndex />} />
+          <Route
+            path="/ruter"
+            element={areaSelected ? <RoutesArea /> : <RoutesIndex />}
+          />
           {/* PRISTABELLER */}
-          <Route path="/pristabeller" element={<PricetableIndex />} />
+          <Route
+            path="/pristabeller"
+            element={areaSelected ? <PricetablesArea /> : <PricetableIndex />}
+          />
           {/* FARTPLANER */}
           <Route
             path="/fartplaner"
             element={areaSelected ? <TimetableArea /> : <TimetablesIndex />}
           />
           {/* SEJLTIDER */}
-          <Route path="/sejltider" element={<SailingTimesIndex />} />
+          <Route
+            path="/sejltider"
+            element={
+              areaSelected ? <SailingTimesArea /> : <SailingTimesIndex />
+            }
+          />
         </Routes>
       </div>
     </div>

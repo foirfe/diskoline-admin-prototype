@@ -30,7 +30,10 @@ export default function TimetablesIndex() {
           <div
             key={area.danish_name}
             className="area"
-            onClick={handleLocalStorage(area.param)}
+            onClick={function () {
+              localStorage.setItem("area", area.param);
+              window.location.reload(false);
+            }}
           >
             <h1>{area.danish_name}</h1>
             <img src={area.image_path} alt={area.danish_name} />
