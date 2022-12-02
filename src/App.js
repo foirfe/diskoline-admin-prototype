@@ -19,6 +19,8 @@ import TimetableArea from "./pages/timetables/TimetableArea";
 import RoutesArea from "./pages/routes/RoutesArea";
 import PricetablesArea from "./pages/pricetables/PricetablesArea";
 import SailingTimesArea from "./pages/sailingtimes/SailingTimesArea";
+import StopsEditStop from "./pages/stops/StopsEditStop";
+import StopsNewStop from "./pages/stops/StopsNewStop";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -57,6 +59,8 @@ function App() {
             path="/stoppesteder"
             element={areaSelected ? <StopsArea /> : <StopsIndex />}
           />
+          <Route path="/stoppesteder/nytstoppested" element={<StopsNewStop/>}/>
+          <Route path="/stoppesteder/:stopId" element={<StopsEditStop/>}/>
           {/*RUTER */}
           <Route
             path="/ruter"

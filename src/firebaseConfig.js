@@ -17,11 +17,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+export const db = getFirestore(app);
 //Authentication
 export const auth = getAuth(app);
 
 //Database Collection
 export const usersRef = collection(db, "users");
 export const areasRef = collection(db, "omraader");
-export const stopsRef = collection(db, "omraader");
+export const stopsRef = collection(db, "stoppesteder");
+export const routesRef = collection(db, "ruter");
+
