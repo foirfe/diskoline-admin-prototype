@@ -47,11 +47,11 @@ export default function RoutesEditRoute() {
   }
   return (
     <section className="page">
-      <h1 className="text-center">Redigere routepested</h1>
+      <h1 className="text-center">Redigere rute</h1>
       <button onClick={handleGoBack}>Tilbage</button>
-      <RouteForm saveroute={handleSubmit} route={route} />
+      <RouteForm saveRoute={handleSubmit} route={route} />
       <button className="btn-outline" onClick={deleteRoute}>
-        Slet routepested
+        Slet rute
       </button>
     </section>
   );

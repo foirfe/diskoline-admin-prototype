@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { stopsRef } from "../firebaseConfig";
 
 export default function RouteForm({ saveRoute, route }) {
+  const stopsToPick = [];
   const [stops, setStops] = useState([]);
-  const [stopsToPick, setStopsToPick] = useState([]);
   const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function RouteForm({ saveRoute, route }) {
     getStops();
     if (route) {
       setName(route.name);
-      setStopsToPick(route.stopsToPick);
+
       // if route, set the states with values from the post object.
       // The route object is a prop.
     }
@@ -33,19 +33,7 @@ export default function RouteForm({ saveRoute, route }) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const checked = document.querySelectorAll(
-      "input[type=checkbox]:checked"
-    ).length;
-    if (!checked) {
-      setErrorMessage("Du skal minimum vælge 1 stoppested");
-    } else {
-      for (const item of event.target.elements) {
-        if (item.checked) {
-          stopsToPick.push(item.value);
-        } else {
-          stopsToPick.pop(item.value);
-        }
-      }
+  
       const formData = {
         // create a new objebt to hold the value from states / input fields
         name: name,
@@ -59,8 +47,7 @@ export default function RouteForm({ saveRoute, route }) {
         setErrorMessage("Navn på rute skal være angivet");
       }
     }
-  }
-  function handleChange(e, gr) {}
+ 
   return (
     <form onSubmit={handleSubmit}>
       <label>
@@ -78,8 +65,9 @@ export default function RouteForm({ saveRoute, route }) {
           <input
             type="checkbox"
             value={stop.danish_name}
-            onChange={(e) => setStopsToPick(e.target.checked)}
-            checked={stop.danish_name}
+            onChange={(e) =>{ if(!this.checked){stopsToPick.push(e.target.value)}
+          else{stopsToPick.pop(e.target.value)}}}
+            
           />
         </label>
       ))}
