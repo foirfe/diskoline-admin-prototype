@@ -26,4 +26,6 @@ export const usersRef = collection(db, "users");
 export const areasRef = collection(db, "omraader");
 export const stopsRef = collection(db, "stoppesteder");
 export const routesRef = collection(db, "ruter");
-
+export const priceTablesRef = collection(db, "pristabeller");
+export const SailingTimesRef = collection(db, "sejltider");
+export const timeTablesRef = collection(db, "fartplaner");

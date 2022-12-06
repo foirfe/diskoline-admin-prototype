@@ -21,6 +21,8 @@ import PricetablesArea from "./pages/pricetables/PricetablesArea";
 import SailingTimesArea from "./pages/sailingtimes/SailingTimesArea";
 import StopsEditStop from "./pages/stops/StopsEditStop";
 import StopsNewStop from "./pages/stops/StopsNewStop";
+import RoutesNewRoute from "./pages/routes/RoutesNewRoute";
+import RoutesEditRoute from "./pages/routes/RoutesEditRoute";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -59,13 +61,18 @@ function App() {
             path="/stoppesteder"
             element={areaSelected ? <StopsArea /> : <StopsIndex />}
           />
-          <Route path="/stoppesteder/nytstoppested" element={<StopsNewStop/>}/>
-          <Route path="/stoppesteder/:stopId" element={<StopsEditStop/>}/>
+          <Route
+            path="/stoppesteder/nytstoppested"
+            element={<StopsNewStop />}
+          />
+          <Route path="/stoppesteder/:stopId" element={<StopsEditStop />} />
           {/*RUTER */}
           <Route
             path="/ruter"
             element={areaSelected ? <RoutesArea /> : <RoutesIndex />}
           />
+          <Route path="/ruter/nyrute" element={<RoutesNewRoute />} />
+          <Route path="/ruter/:routeId" element={<RoutesEditRoute />} />
           {/* PRISTABELLER */}
           <Route
             path="/pristabeller"
