@@ -36,9 +36,7 @@ const navigate = useNavigate();
     getArea();
     getRoutes();
   }, []);
-  function handleNavigate(e){
-navigate(`/fartplaner/${e}`)
-  }
+
   return (
     <div className="areselectedpage timetable_page">
       <BackButton />
