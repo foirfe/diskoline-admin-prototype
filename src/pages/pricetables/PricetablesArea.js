@@ -21,7 +21,7 @@ export default function PricetablesArea() {
   }, []);
 
   return (
-    <div className="areselectedpage stopspage">
+    <div className="areselectedpage pricetablespage">
       <BackButton />
       <h1>Pristabeller</h1>
       <h2>{area.danish_name}</h2>

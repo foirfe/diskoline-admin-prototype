@@ -64,11 +64,11 @@ export default function StopForm({saveStop, stop}){
     <h4>Ønskes der at samles informationer om kundens rejse?</h4>
     <label>
     "Hvor overnatter du?"
-    <input type="checkbox"  checked={info1} onChange={e=> setInfo1(e.target.value)}/>
+    <input type="checkbox"  value={info1} defaultChecked={info1} onChange={e=> setInfo1(e.target.value)}/>
     </label>
     <label>
     "Hvilket flyselskab flyver du med til Grønland?"
-    <input type="checkbox"  checked={info2} onChange={e=> setInfo2(e.target.value)}/>
+    <input type="checkbox" value={info2} defaultChecked={info2} onChange={e=> setInfo2(e.target.value)}/>
     </label>
     <p className="text-error">{errorMessage}</p>
     <button type="submit">Gem</button>

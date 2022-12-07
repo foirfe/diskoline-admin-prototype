@@ -41,7 +41,7 @@ export default function RoutesArea() {
   }
 
   return (
-    <div className="areselectedpage stopspage">
+    <div className="areselectedpage routepage">
       <BackButton />
       <h1>Ruter</h1>
       <h2>{area.danish_name}</h2>

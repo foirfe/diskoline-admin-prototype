@@ -14,7 +14,7 @@ export default function RoutesNewRoute() {
     navigate("/ruter");
   }
   return (
-    <section className="page">
+    <section className="page routepage">
       <h1 className="text-center">Opret nyt stoppested</h1>
       <RouteForm saveRoute={createRoute} />
     </section>

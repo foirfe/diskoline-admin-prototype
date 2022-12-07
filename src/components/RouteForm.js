@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { stopsRef } from "../firebaseConfig";
 
 export default function RouteForm({ saveRoute, route }) {
-  const stopsToPick = [];
   const [stops, setStops] = useState([]);
+  const [stopsToPick, setStopsToPick] = useState([]);
   const [name, setName] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   useEffect(() => {
@@ -23,6 +23,7 @@ export default function RouteForm({ saveRoute, route }) {
       return () => unsubscribe(); // tell the post component to unsubscribe from listen on changes from firestore
     }
     getStops();
+
     if (route) {
       setName(route.name);
 
@@ -30,7 +31,6 @@ export default function RouteForm({ saveRoute, route }) {
       // The route object is a prop.
     }
   }, [route]); // useEffect is called every time post changes.
-
   function handleSubmit(event) {
     event.preventDefault();
   
@@ -47,7 +47,15 @@ export default function RouteForm({ saveRoute, route }) {
         setErrorMessage("Navn på rute skal være angivet");
       }
     }
- 
+    function handleChange(e){
+       const { value, checked } = e.target;
+      if(checked){
+        stopsToPick.push(value)
+      } else {
+        stopsToPick.pop(value)
+      }
+    }
+    
   return (
     <form onSubmit={handleSubmit}>
       <label>
@@ -60,13 +68,12 @@ export default function RouteForm({ saveRoute, route }) {
       </label>
       Vælg stoppesteder til rute
       {stops.map((stop) => (
-        <label>
+        <label key={stop.danish_name}>
           {stop.danish_name} {stop.code}
           <input
             type="checkbox"
             value={stop.danish_name}
-            onChange={(e) =>{ if(!this.checked){stopsToPick.push(e.target.value)}
-          else{stopsToPick.pop(e.target.value)}}}
+            onChange={handleChange}
             
           />
         </label>

@@ -17,9 +17,6 @@ export default function TimetablesIndex() {
     return () => unsubscribe(); // tell the post component to unsubscribe from listen on changes from firestore
   }, []);
 
-  function handleLocalStorage(area) {
-    localStorage.setItem("area", area);
-  }
 
   return (
     <div className="index_page">

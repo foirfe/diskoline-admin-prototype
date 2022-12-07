@@ -32,6 +32,7 @@ useEffect(() => {
 
 function handleSignOut(){
     signOut(getauth);
+    navigate("/");
 }
 function handleLogoNavigation(){
     navigate("/");

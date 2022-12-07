@@ -46,8 +46,9 @@ function handleGoBack(){
     navigate("/stoppesteder");
 }
     return (
-        <section className="page">
-            <h1 className="text-center">Redigere Stoppested</h1>
+        <section className="page stopspage">
+            <h1>Stoppesteder</h1>
+            <h2 className="text-center">Redigere Stoppested</h2>
             <button onClick={handleGoBack}>Tilbage</button>
             <StopForm saveStop={handleSubmit} stop={stop} />
             <button className="btn-outline" onClick={deletePost}>

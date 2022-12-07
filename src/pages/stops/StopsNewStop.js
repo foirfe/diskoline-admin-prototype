@@ -14,8 +14,9 @@ export default function StopsNewStop() {
         navigate("/stoppesteder");
     }
     return (
-        <section className="page">
-            <h1 className="text-center">Opret nyt stoppested</h1>
+        <section className="page stopspage">
+            <h1>Stoppesteder</h1>
+            <h2 className="text-center">Opret nyt stoppested</h2>
             <StopForm saveStop={createStop} />
         </section>
     );

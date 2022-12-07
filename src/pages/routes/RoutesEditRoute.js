@@ -46,7 +46,7 @@ export default function RoutesEditRoute() {
     navigate("/ruter");
   }
   return (
-    <section className="page">
+    <section className="page routepage">
       <h1 className="text-center">Redigere rute</h1>
       <button onClick={handleGoBack}>Tilbage</button>
       <RouteForm saveRoute={handleSubmit} route={route} />

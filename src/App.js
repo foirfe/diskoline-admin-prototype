@@ -23,6 +23,8 @@ import StopsEditStop from "./pages/stops/StopsEditStop";
 import StopsNewStop from "./pages/stops/StopsNewStop";
 import RoutesNewRoute from "./pages/routes/RoutesNewRoute";
 import RoutesEditRoute from "./pages/routes/RoutesEditRoute";
+import TimetableRoute from "./pages/timetables/TimetableRoute";
+import TimetableNew from "./pages/timetables/TimetableNew";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -83,6 +85,8 @@ function App() {
             path="/fartplaner"
             element={areaSelected ? <TimetableArea /> : <TimetablesIndex />}
           />
+          <Route path="/fartplaner/:routeId" element={<TimetableRoute/>}/>
+          <Route path="fartplaner/nyfartplan" element={<TimetableNew/>}/>
           {/* SEJLTIDER */}
           <Route
             path="/sejltider"
