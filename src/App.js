@@ -86,7 +86,7 @@ function App() {
             element={areaSelected ? <TimetableArea /> : <TimetablesIndex />}
           />
           <Route path="/fartplaner/:routeId" element={<TimetableRoute/>}/>
-          <Route path="fartplaner/nyfartplan" element={<TimetableNew/>}/>
+          <Route path="fartplaner/:currentRoute/nyfartplan" element={<TimetableNew/>}/>
           {/* SEJLTIDER */}
           <Route
             path="/sejltider"

@@ -1,9 +1,10 @@
-import { getDocs, query, where } from "@firebase/firestore";
+import { getDocs, onSnapshot, query, where } from "@firebase/firestore";
 import { useEffect, useState } from "react";
 import BackButton from "../../components/BackButton";
-import { areasRef } from "../../firebaseConfig";
+import { areasRef, priceTablesRef } from "../../firebaseConfig";
 
 export default function PricetablesArea() {
+  const [pricetables, setPricetables] = useState([]);
   const [area, setArea] = useState("");
 
   useEffect(() => {
@@ -17,6 +18,21 @@ export default function PricetablesArea() {
         setArea(doc.data());
       });
     }
+    async function getPriceTables(){
+      const q = query(
+          priceTablesRef,
+          where("area", "==", localStorage.getItem("area"))
+        );
+        const unsubscribe = onSnapshot(q, (data) => {
+          const priceTablesData = data.docs.map((doc) => {
+        
+            return { ...doc.data(), id: doc.id }; 
+          });
+          setPricetables(priceTablesData);
+        });
+        return () => unsubscribe(); // tell the post component to unsubscribe from listen on changes from firestore
+  }
+  getPriceTables();
     getArea();
   }, []);
 
@@ -25,7 +41,15 @@ export default function PricetablesArea() {
       <BackButton />
       <h1>Pristabeller</h1>
       <h2>{area.danish_name}</h2>
-      <button>Ny pristabel</button>
+      {pricetables.map((pricetable) => (
+          <div
+            key={pricetable.name}
+            className="pricetable"
+          >
+            <h3>{pricetable.name}</h3>
+          </div>
+        ))}
+        <p>I øjeblikket kan man ikke lave nye pristabeller</p>
     </div>
   );
 }
