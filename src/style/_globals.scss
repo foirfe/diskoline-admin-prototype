@@ -1,27 +1,27 @@
 // Colors
-$main-color: #283F6C;
-$panels-color: #33518B;
-$buttons: #E1652A;
+$main-color: #283f6c;
+$panels-color: #33518b;
+$buttons: #e1652a;
 $white: #fff;
-$background: #F7F7F7;
+$background: #f7f7f7;
 $signinbackground: #282829;
 $speed: 500ms;
 
 //Global Site Styling
-html{
-    margin: 0;
-    background-color: $background;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+html {
+  margin: 0;
+  background-color: $background;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-body{
-    margin: 0;
+body {
+  margin: 0;
 }
 
-button{
-    border: none;
-    color: $white;
-    background: $buttons;
+button {
+  border: none;
+  color: $white;
+  background: $buttons;
 }
-.app{
-    display: flex;
+.app {
+  display: flex;
 }
