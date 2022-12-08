@@ -1,5 +1,6 @@
 import { getDocs, onSnapshot, query, where } from "@firebase/firestore";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import BackButton from "../../components/BackButton";
 import { areasRef, routesRef } from "../../firebaseConfig";
@@ -7,7 +8,7 @@ import { areasRef, routesRef } from "../../firebaseConfig";
 export default function TimetableArea() {
   const [area, setArea] = useState("");
   const [routes, setRoutes] = useState([]);
-const navigate = useNavigate();
+  const navigate = useNavigate();
   useEffect(() => {
     async function getArea() {
       const q = query(
@@ -19,7 +20,7 @@ const navigate = useNavigate();
         setArea(doc.data());
       });
     }
-    async function getRoutes(){
+    async function getRoutes() {
       const q = query(
         routesRef,
         where("area", "==", localStorage.getItem("area"))
@@ -32,28 +33,31 @@ const navigate = useNavigate();
         setRoutes(routesData);
       });
       return () => unsubscribe(); // tell the post component to unsubscribe from listen on changes from firestore
-    };
+    }
     getArea();
     getRoutes();
   }, []);
 
   return (
     <div className="areselectedpage timetable_page">
+      <Helmet>
+        <title>Fartplaner | Disko Line Admin</title>
+      </Helmet>
       <BackButton />
       <h1>Fartplaner</h1>
       <h2>{area.danish_name}</h2>
       <h3>Vælg rute</h3>
       {routes.map((route) => (
-          <div
-            key={route.name}
-            className="route"
-            onClick={function () {
-              navigate(`/fartplaner/${route.id}`)
-            }}
-          >
-            <h3>{route.name}</h3>
-          </div>
-        ))}
+        <div
+          key={route.name}
+          className="route"
+          onClick={function () {
+            navigate(`/fartplaner/${route.id}`);
+          }}
+        >
+          <h3>{route.name}</h3>
+        </div>
+      ))}
     </div>
   );
 }

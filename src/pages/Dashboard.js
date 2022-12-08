@@ -1,8 +1,12 @@
-export default function Dashboard(){
+import { Helmet } from "react-helmet";
 
-    return(
-        <div className="dashboard_page">
-    <h1>Dashboard</h1>
+export default function Dashboard() {
+  return (
+    <div className="dashboard_page">
+      <Helmet>
+        <title>Disko Line Admin</title>
+      </Helmet>
+      <h1>Dashboard</h1>
     </div>
-        )
+  );
 }

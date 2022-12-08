@@ -1,5 +1,6 @@
 import { onSnapshot, orderBy, query } from "@firebase/firestore";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { areasRef } from "../../firebaseConfig";
 
 export default function StopsIndex() {
@@ -19,9 +20,11 @@ export default function StopsIndex() {
 
   return (
     <div className="index_page">
+      <Helmet>
+        <title>Stoppesteder | Disko Line Admin</title>
+      </Helmet>
       <h1>Stoppesteder</h1>
       <h2>Vælg Område</h2>
-      <h3>Ruter</h3>
       <div className="areas">
         {areas.map((area) => (
           <div

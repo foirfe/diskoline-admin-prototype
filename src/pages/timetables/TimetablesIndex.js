@@ -1,5 +1,6 @@
 import { onSnapshot, orderBy, query } from "@firebase/firestore";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { areasRef } from "../../firebaseConfig";
 
 export default function TimetablesIndex() {
@@ -17,9 +18,11 @@ export default function TimetablesIndex() {
     return () => unsubscribe(); // tell the post component to unsubscribe from listen on changes from firestore
   }, []);
 
-
   return (
     <div className="index_page">
+      <Helmet>
+        <title>Fartplaner | Disko Line Admin</title>
+      </Helmet>
       <h1>Fartplaner</h1>
       <h2>Vælg Område</h2>
       <div className="areas">

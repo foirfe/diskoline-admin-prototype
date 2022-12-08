@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { addDoc } from "@firebase/firestore";
 import { routesRef } from "../../firebaseConfig";
 import RouteForm from "../../components/RouteForm";
+import { Helmet } from "react-helmet";
 
 export default function RoutesNewRoute() {
   const navigate = useNavigate();
@@ -15,7 +16,10 @@ export default function RoutesNewRoute() {
   }
   return (
     <section className="page routepage">
-      <h1 className="text-center">Opret nyt stoppested</h1>
+      <Helmet>
+        <title>Ny rute | Disko Line Admin</title>
+      </Helmet>
+      <h1 className="text-center">Opret ny rute</h1>
       <RouteForm saveRoute={createRoute} />
     </section>
   );

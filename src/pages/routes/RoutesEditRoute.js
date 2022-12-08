@@ -1,5 +1,6 @@
 import { doc, getDoc, updateDoc, deleteDoc } from "@firebase/firestore";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useNavigate, useParams } from "react-router-dom";
 import RouteForm from "../../components/RouteForm";
 import { routesRef } from "../../firebaseConfig";
@@ -47,7 +48,10 @@ export default function RoutesEditRoute() {
   }
   return (
     <section className="page routepage">
-      <h1 className="text-center">Redigere rute</h1>
+      <Helmet>
+        <title>Redigér rute | Disko Line Admin</title>
+      </Helmet>
+      <h1 className="text-center">Redigér rute</h1>
       <button onClick={handleGoBack}>Tilbage</button>
       <RouteForm saveRoute={handleSubmit} route={route} />
       <button className="btn-outline" onClick={deleteRoute}>

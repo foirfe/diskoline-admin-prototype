@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { useNavigate, useParams } from "react-router-dom";
 import { timeTablesRef } from "../../firebaseConfig";
+import { Helmet } from "react-helmet";
 
 export default function TimetableRoute() {
   const [timetables, setTimetables] = useState([]);
@@ -38,6 +39,9 @@ export default function TimetableRoute() {
   }
   return (
     <div className="timetableselect">
+      <Helmet>
+        <title>Fartplaner | Disko Line Admin</title>
+      </Helmet>
       <button onClick={handleGoBack}>Tilbage</button>
       <h1>Fartplaner</h1>
 

@@ -1,5 +1,6 @@
 import { doc, getDoc, updateDoc, deleteDoc } from "@firebase/firestore";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useNavigate, useParams } from "react-router-dom";
 import TimeTableForm from "../../components/TimeTableForm";
 import { timeTablesRef } from "../../firebaseConfig";
@@ -42,7 +43,10 @@ export default function TimetableEdit() {
   }
   return (
     <section className="page routepage">
-      <h1 className="text-center">Redigere fartplan</h1>
+      <Helmet>
+        <title>Redigér Fartplan | Disko Line Admin</title>
+      </Helmet>
+      <h1 className="text-center">Redigér fartplan</h1>
       <button onClick={handleGoBack}>Tilbage</button>
       <TimeTableForm saveTimetable={handleSubmit} timeTable={timetable} />
       <button className="btn-outline" onClick={deleteTimetable}>

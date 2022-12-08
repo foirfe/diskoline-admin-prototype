@@ -1,5 +1,6 @@
 import { onSnapshot, orderBy, query } from "@firebase/firestore";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { areasRef } from "../../firebaseConfig";
 
 export default function PricetablesIndex() {
@@ -19,6 +20,9 @@ export default function PricetablesIndex() {
 
   return (
     <div className="index_page">
+      <Helmet>
+        <title>Pristabeller | Disko Line Admin</title>
+      </Helmet>
       <h1>Pristabeller</h1>
       <h2>Vælg Område</h2>
       <div className="areas">

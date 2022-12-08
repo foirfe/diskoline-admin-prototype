@@ -1,5 +1,6 @@
 import { getDocs, onSnapshot, query, where } from "@firebase/firestore";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import BackButton from "../../components/BackButton";
 import { areasRef, priceTablesRef } from "../../firebaseConfig";
 
@@ -18,38 +19,37 @@ export default function PricetablesArea() {
         setArea(doc.data());
       });
     }
-    async function getPriceTables(){
+    async function getPriceTables() {
       const q = query(
-          priceTablesRef,
-          where("area", "==", localStorage.getItem("area"))
-        );
-        const unsubscribe = onSnapshot(q, (data) => {
-          const priceTablesData = data.docs.map((doc) => {
-        
-            return { ...doc.data(), id: doc.id }; 
-          });
-          setPricetables(priceTablesData);
+        priceTablesRef,
+        where("area", "==", localStorage.getItem("area"))
+      );
+      const unsubscribe = onSnapshot(q, (data) => {
+        const priceTablesData = data.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
         });
-        return () => unsubscribe(); // tell the post component to unsubscribe from listen on changes from firestore
-  }
-  getPriceTables();
+        setPricetables(priceTablesData);
+      });
+      return () => unsubscribe(); // tell the post component to unsubscribe from listen on changes from firestore
+    }
+    getPriceTables();
     getArea();
   }, []);
 
   return (
     <div className="areselectedpage pricetablespage">
+      <Helmet>
+        <title>{`Pristabeller for ${area.danish_name} | Disko Line Admin`}</title>
+      </Helmet>
       <BackButton />
       <h1>Pristabeller</h1>
       <h2>{area.danish_name}</h2>
       {pricetables.map((pricetable) => (
-          <div
-            key={pricetable.name}
-            className="pricetable"
-          >
-            <h3>{pricetable.name}</h3>
-          </div>
-        ))}
-        <p>I øjeblikket kan man ikke lave nye pristabeller</p>
+        <div key={pricetable.name} className="pricetable">
+          <h3>{pricetable.name}</h3>
+        </div>
+      ))}
+      <p>I øjeblikket kan man ikke lave nye pristabeller</p>
     </div>
   );
 }

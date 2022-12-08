@@ -1,12 +1,11 @@
 import { getDocs, query, where } from "@firebase/firestore";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import BackButton from "../../components/BackButton";
-import { areasRef} from "../../firebaseConfig";
+import { areasRef } from "../../firebaseConfig";
 
 export default function SailingTimesArea() {
   const [area, setArea] = useState("");
-
-
 
   useEffect(() => {
     async function getArea() {
@@ -18,15 +17,16 @@ export default function SailingTimesArea() {
       querySnapshot.forEach((doc) => {
         setArea(doc.data());
       });
-    };
+    }
 
     getArea();
-
-
   }, []);
 
   return (
     <div className="areselectedpage stopspage">
+      <Helmet>
+        <title>{`Sejltider for ${area.danish_name} | Disko Line Admin`}</title>
+      </Helmet>
       <BackButton />
       <h1>Sejltider</h1>
       <h2>{area.danish_name}</h2>

@@ -1,5 +1,6 @@
 import { onSnapshot, orderBy, query } from "@firebase/firestore";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { areasRef } from "../../firebaseConfig";
 
 export default function RoutesIndex() {
@@ -19,6 +20,9 @@ export default function RoutesIndex() {
 
   return (
     <div className="index_page">
+      <Helmet>
+        <title>Ruter | Disko Line Admin</title>
+      </Helmet>
       <h1>Ruter</h1>
       <h2>Vælg Område</h2>
       <div className="areas">

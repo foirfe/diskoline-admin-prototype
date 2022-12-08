@@ -1,5 +1,6 @@
 import { getDocs, onSnapshot, query, where } from "@firebase/firestore";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import BackButton from "../../components/BackButton";
 import { areasRef, routesRef } from "../../firebaseConfig";
@@ -42,6 +43,9 @@ export default function RoutesArea() {
 
   return (
     <div className="areselectedpage routepage">
+      <Helmet>
+        <title>{`Ruter for ${area.danish_name} | Disko Line Admin`}</title>
+      </Helmet>
       <BackButton />
       <h1>Ruter</h1>
       <h2>{area.danish_name}</h2>
