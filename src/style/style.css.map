@@ -7,7 +7,8 @@
         "components/_topbar.scss",
         "components/_dropdownitem.scss",
         "pages/_publicpage.scss",
-        "pages/_index_pages.scss"
+        "pages/_index_pages.scss",
+        "pages/_dashboard_page.scss"
     ],
     "names": [],
     "file": "style.css"

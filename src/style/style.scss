@@ -1,9 +1,10 @@
 //Globals
-@import 'globals';
+@import "globals";
 
 //Components
-@import 'components/topbar';
-@import 'components/dropdownitem';
+@import "components/topbar";
+@import "components/dropdownitem";
 //Pages
-@import 'pages/publicpage';
-@import 'pages/index_pages';
+@import "pages/publicpage";
+@import "pages/index_pages";
+@import "pages/dashboard_page";
