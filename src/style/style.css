@@ -222,4 +222,57 @@ button {
 .index_page .areas img {
   width: 40%;
 }
+
+.dashboard_page h1 {
+  text-align: center;
+}
+
+.dashboard_page p {
+  text-align: center;
+}
+
+.dashboard_page .upper-dashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.dashboard_page .upper-dashboard h2 {
+  text-align: center;
+}
+
+.dashboard_page .upper-dashboard div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dashboard_page .upper-dashboard img {
+  width: 80%;
+  -webkit-box-shadow: 6px 4px 22px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 4px 22px -4px rgba(0, 0, 0, 0.75);
+}
+
+.dashboard_page .lower-dashboard h2 {
+  text-align: center;
+}
+
+.dashboard_page .lower-dashboard div {
+  text-align: center;
+}
+
+.dashboard_page .lower-dashboard div img {
+  -webkit-box-shadow: 6px 4px 22px -4px rgba(0, 0, 0, 0.75);
+  box-shadow: 6px 4px 22px -4px rgba(0, 0, 0, 0.75);
+}
 /*# sourceMappingURL=style.css.map */
