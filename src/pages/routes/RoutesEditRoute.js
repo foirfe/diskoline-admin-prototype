@@ -33,7 +33,7 @@ export default function RoutesEditRoute() {
 
   async function deleteRoute() {
     const confirmDelete = window.confirm(
-      `Vil du gerne slette routepestedet ${route.name}?`
+      `Vil du gerne slette routen ${route.name}?`
     ); // show confirm delete dialog
     if (confirmDelete) {
       // if user click "OK" then delete post

@@ -29,11 +29,11 @@ export default function TimeTableForm({ saveTimetable, timeTable }) {
       });
       return () => unsubscribe(); // tell the post component to unsubscribe from listen on changes from firestore
     }
+
     getPriceTables();
   }, [timeTable]); // useEffect is called every time post changes.
   function handleSubmit(event) {
     event.preventDefault();
-
     const formData = {
       // create a new objebt to hold the value from states / input fields
       startDate: startDate,
@@ -73,7 +73,6 @@ export default function TimeTableForm({ saveTimetable, timeTable }) {
           onChange={(e) => setEndDate(e.target.value)}
         />
       </div>
-      <label>Afgang-Ankomst</label>
       <label htmlFor="pricetable">Pristabel</label>
       <select
         id="pricetable"

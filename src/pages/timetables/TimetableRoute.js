@@ -1,21 +1,16 @@
-import { doc, getDoc, onSnapshot, query, where } from "@firebase/firestore";
+import { onSnapshot, query, where } from "@firebase/firestore";
 import { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { useNavigate, useParams } from "react-router-dom";
-import { routesRef, timeTablesRef } from "../../firebaseConfig";
+import { timeTablesRef } from "../../firebaseConfig";
 
 export default function TimetableRoute() {
   const [timetables, setTimetables] = useState([]);
-  const [selectedRoute, setSelectedRoute] = useState("");
+
   const params = useParams(); // url parameter
   const routeId = params.routeId; // get route id from url parameter
   const navigate = useNavigate();
   useEffect(() => {
-    async function getRoute() {
-      const docRef = doc(routesRef, routeId); // create post ref based on routeId from url parameter
-      const docData = await getDoc(docRef); // get post data (one specific post)
-      setSelectedRoute(docData.data().name); // setting post state with data from firestore
-    }
     async function getTimeTables() {
       const q = query(timeTablesRef, where("route", "==", routeId));
       const unsubscribe = onSnapshot(q, (data) => {
@@ -27,7 +22,7 @@ export default function TimetableRoute() {
       });
       return () => unsubscribe(); // tell the post component to unsubscribe from listen on changes from firestore
     }
-    getRoute();
+
     getTimeTables();
   }, [routeId]); // called every time routeId changes
 
@@ -45,13 +40,13 @@ export default function TimetableRoute() {
     <div className="timetableselect">
       <button onClick={handleGoBack}>Tilbage</button>
       <h1>Fartplaner</h1>
-      <h3>Fartplaner for {selectedRoute}</h3>
+
       {timetables.map((timetable) => (
         <div
           key={timetable.id}
           className="timetable"
           onClick={function () {
-            navigate(`/fartplaner/${timetable.id}`);
+            navigate(`/fartplaner/redigere/${timetable.id}`);
           }}
         >
           <h3>

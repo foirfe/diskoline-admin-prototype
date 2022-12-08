@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {  Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import "./style/style.css";
 import { auth } from "./firebaseConfig";
@@ -25,6 +25,7 @@ import RoutesNewRoute from "./pages/routes/RoutesNewRoute";
 import RoutesEditRoute from "./pages/routes/RoutesEditRoute";
 import TimetableRoute from "./pages/timetables/TimetableRoute";
 import TimetableNew from "./pages/timetables/TimetableNew";
+import TimetableEdit from "./pages/timetables/TimetableEdit";
 
 function App() {
   const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
@@ -85,8 +86,15 @@ function App() {
             path="/fartplaner"
             element={areaSelected ? <TimetableArea /> : <TimetablesIndex />}
           />
-          <Route path="/fartplaner/:routeId" element={<TimetableRoute/>}/>
-          <Route path="fartplaner/:currentRoute/nyfartplan" element={<TimetableNew/>}/>
+          <Route path="/fartplaner/:routeId" element={<TimetableRoute />} />
+          <Route
+            path="fartplaner/:currentRoute/nyfartplan"
+            element={<TimetableNew />}
+          />
+          <Route
+            path="/fartplaner/redigere/:timetableId"
+            element={<TimetableEdit />}
+          />
           {/* SEJLTIDER */}
           <Route
             path="/sejltider"
