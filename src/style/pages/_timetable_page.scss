@@ -1,3 +1,4 @@
+//Timetable Area Selected
 .timetable_page {
   width: 100%;
   h1 {
@@ -39,6 +40,208 @@
     }
     h3 {
       margin-left: 2%;
+    }
+  }
+}
+
+//Timetable With Route Selected
+.timetablewithroute{
+  width: 100%;
+  position: relative;
+  h1{
+    text-align: center;
+  }
+  .timetables{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .timetable{
+    background: #9796964b;
+    width: 80%;
+    border-radius: 8px;
+    margin-bottom: 1.5%;
+    .timetable-panel{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &:hover {
+        cursor: pointer;
+        background: #979696;
+        border-radius: 8px;
+        .pencil-icon {
+          -webkit-animation: pulsate-bck 0.5s ease-in-out infinite both;
+          animation: pulsate-bck 0.5s ease-in-out infinite both;
+        }
+      }
+      h3{
+        font-size: 1.5em;
+        margin-left: 2%;
+      }
+      .pencil-icon{
+        background: white;
+        border-radius: 150px;
+        height: 30px;
+        margin-right: 2.5%;
+        width: 30px;
+        padding: 0.5%;
+        svg{
+          margin: 8%;
+        }
+      }
+    }
+  }
+  .newtimetable-btn{
+    display: flex;
+    button{
+      width: 210px;
+      height: 46px;
+      margin: 0 auto;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.25em;
+      box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .back-btn{
+    position: absolute;
+    top: 4%;
+    background: #283f6c;
+    left: 10%;
+    font-weight: bold;
+    padding: 0.5% 1% 0.5% 1%;
+    border-radius: 8px;
+    box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.5);
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      transition: $speed;
+    }
+  }
+}
+
+//Timetable Form Page
+.timetableformpage{
+  width: 100%;
+  position: relative;
+  h1{
+    text-align: center;
+  }
+  h2{
+    text-align: center;
+  }
+  form{
+    background: #33518b;
+    color: #fff;
+    width: 90%;
+    border-radius: 8px;
+    margin: 1% auto;
+    padding: 2% 0 2% 0;
+    h3{
+      margin-left: 2%;
+      font-size: 1.5em;
+      position: relative;
+      &::after {
+        display: block;
+        content: "";
+        width: 95%;
+        height: 1px;
+        background: $white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+    .dates{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p{
+        font-weight: bold;
+      }
+    }
+    .dateinput{
+      display: flex;
+      align-items: center;
+      p{
+        width: 50%;
+      }
+     input{
+      margin-left: 2%;
+     }
+    }
+    .pricetable-label{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      label{
+        margin-right: 2%;
+        font-weight: bold;
+      }
+    }
+    .pax-label{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      label{
+        margin-right: 2%;
+        font-weight: bold;
+      }
+    }
+    .extra-items-label{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .special-label{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    .submit-btn{
+       display: flex;
+       button{
+        width: 210px;
+        height: 46px;
+        margin: 2% auto 1% auto;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 1.25em;
+        box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+       }
+    }
+  }
+  .delete-btn{
+    position: absolute;
+    font-size: 2em;
+    top: 10%;
+    right: 5%;
+    transition: 500ms;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.2);
+      transition: $speed;
+    }
+  }
+  .back-btn{
+    position: absolute;
+    top: 10%;
+    background: #283f6c;
+    left: 5%;
+    font-weight: bold;
+    padding: 0.5% 1% 0.5% 1%;
+    border-radius: 8px;
+    box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.5);
+    &:hover{
+      cursor: pointer;
+      transform: scale(1.05);
+      transition: 500ms;
     }
   }
 }

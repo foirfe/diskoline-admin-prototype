@@ -54,53 +54,66 @@ export default function TimeTableForm({ saveTimetable, timeTable }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Periode:<span></span>
-      </label>
-      <div className="startdate">
+      <h3>
+        Periode
+      </h3>
+      <div className="dates">
+      <div className="startdate dateinput">
         <p>Start dato:</p>
         <input
           type="date"
           required
           onChange={(e) => setStartDate(e.target.value)}
-        />
+          />
       </div>
-      <div className="enddate">
+      <div className="enddate dateinput">
         <p>Slut dato:</p>
         <input
           type="date"
           required
           onChange={(e) => setEndDate(e.target.value)}
-        />
+          />
+          </div>
       </div>
-      <label htmlFor="pricetable">Pristabel</label>
+      <h3>Pristabel</h3>
+      <div className="pricetable-label">
+      <label htmlFor="pricetable">Pristabel:</label>
       <select
         id="pricetable"
         name="pricetable"
         onChange={(e) => setPricetable(e.target.value)}
-      >
+        >
         {pricetables.map((pricetable) => (
           <option key={pricetable.id} value={pricetable.name}>
             {pricetable.name}
           </option>
         ))}
       </select>
+        </div>
       <h3>Pax</h3>
-      <label>Antal Pax</label>
+      <div className="pax-label">
+      <label>Antal Pax:</label>
       <input
         type="number"
         min="1"
         max="100"
         onChange={(e) => setPax(e.target.value)}
-      />
+        />
+        </div>
       <h3>Tilkøb</h3>
+      <div className="extra-items-label">
       <label>Mulighed for tilkøb til turen?</label>
       <input type="checkbox" value="tilkoeb" />
+      </div>
       <h3>Special</h3>
+      <div className="special-label">
       <label>Er denne tur en special tur?</label>
       <input type="checkbox" value="special" />
+      </div>
       <p>{errorMessage}</p>
+      <div className="submit-btn">
       <button type="submit">Gem fartplan</button>
+      </div>
     </form>
   );
 }

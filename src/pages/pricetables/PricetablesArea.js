@@ -37,7 +37,7 @@ export default function PricetablesArea() {
   }, []);
 
   return (
-    <div className="areselectedpage pricetablespage">
+    <div className="areaselectedpage pricetablespage">
       <Helmet>
         <title>{`Pristabeller for ${area.danish_name} | Disko Line Admin`}</title>
       </Helmet>

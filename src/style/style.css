@@ -14,6 +14,30 @@ button {
   background: #e1652a;
 }
 
+.areaselectedpage {
+  position: relative;
+}
+
+.change-area-btn {
+  position: absolute;
+  top: 2%;
+  background: #283f6c;
+  left: 2%;
+  font-weight: bold;
+  padding: 0.5% 1% 0.5% 1%;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.5);
+}
+
+.change-area-btn:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
 .app {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -678,18 +702,23 @@ button {
 }
 
 .routespage .newroute-btn {
-  position: absolute;
-  font-weight: bold;
-  font-size: 1.25em;
-  border-radius: 8px;
-  padding: 1% 2% 1% 2%;
-  bottom: 15%;
-  left: 45%;
-  -webkit-box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.routespage .newroute-btn:hover {
+.routespage .newroute-btn button {
+  width: 210px;
+  height: 46px;
+  margin: 0 auto;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.25em;
+  -webkit-box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+}
+
+.routespage .newroute-btn button:hover {
   cursor: pointer;
 }
 
@@ -747,7 +776,7 @@ button {
   text-decoration: underline;
 }
 
-.routesformpage form label {
+.routesformpage form .label-name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -760,7 +789,7 @@ button {
   margin-bottom: 1%;
 }
 
-.routesformpage form label input {
+.routesformpage form .label-name input {
   width: 50%;
   font-weight: bold;
   font-size: 1.05em;
@@ -785,20 +814,21 @@ button {
 .routesformpage form .stops-checkboxes .label-box {
   margin: 1% 2% 1% 2%;
   width: 25%;
-  background-color: rgba(59, 89, 78, 0.385);
+  background-color: #707070;
   border-radius: 8px;
   -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
-.routesformpage form .stops-checkboxes .label-box:hover {
+.routesformpage form .stops-checkboxes .label-box .label-stop:hover {
   cursor: pointer;
 }
 
 .routesformpage form .stops-checkboxes .label-box .stop-code {
   margin: 0;
-  padding: 20%;
+  padding-top: 5%;
   font-size: 1.25em;
+  font-weight: bold;
 }
 
 .routesformpage form .stops-checkboxes .label-box .stop-name {
@@ -809,7 +839,6 @@ button {
 .routesformpage form .stops-checkboxes input:checked + div {
   border-radius: 8px;
   width: 100%;
-  padding: 2%;
   background-color: #1d3029d3;
   opacity: 0.9;
   -webkit-box-shadow: rgba(35, 35, 52, 0.365) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
@@ -828,6 +857,28 @@ button {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.25em;
+}
+
+.routesformpage .delete-btn {
+  position: absolute;
+  font-size: 2em;
+  top: 5%;
+  right: 5%;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.routesformpage .submit-btn button {
+  font-weight: bold;
+  font-size: 1.25em;
+  border-radius: 8px;
+  padding: 1% 2% 1% 2%;
+  -webkit-box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+}
+
+.routesformpage .submit-btn button:hover {
+  cursor: pointer;
 }
 
 .timetable_page {
@@ -888,6 +939,307 @@ button {
 
 .timetable_page .route h3 {
   margin-left: 2%;
+}
+
+.timetablewithroute {
+  width: 100%;
+  position: relative;
+}
+
+.timetablewithroute h1 {
+  text-align: center;
+}
+
+.timetablewithroute .timetables {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.timetablewithroute .timetable {
+  background: #9796964b;
+  width: 80%;
+  border-radius: 8px;
+  margin-bottom: 1.5%;
+}
+
+.timetablewithroute .timetable .timetable-panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.timetablewithroute .timetable .timetable-panel:hover {
+  cursor: pointer;
+  background: #979696;
+  border-radius: 8px;
+}
+
+.timetablewithroute .timetable .timetable-panel:hover .pencil-icon {
+  -webkit-animation: pulsate-bck 0.5s ease-in-out infinite both;
+  animation: pulsate-bck 0.5s ease-in-out infinite both;
+}
+
+.timetablewithroute .timetable .timetable-panel h3 {
+  font-size: 1.5em;
+  margin-left: 2%;
+}
+
+.timetablewithroute .timetable .timetable-panel .pencil-icon {
+  background: white;
+  border-radius: 150px;
+  height: 30px;
+  margin-right: 2.5%;
+  width: 30px;
+  padding: 0.5%;
+}
+
+.timetablewithroute .timetable .timetable-panel .pencil-icon svg {
+  margin: 8%;
+}
+
+.timetablewithroute .newtimetable-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.timetablewithroute .newtimetable-btn button {
+  width: 210px;
+  height: 46px;
+  margin: 0 auto;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.25em;
+  -webkit-box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+}
+
+.timetablewithroute .newtimetable-btn button:hover {
+  cursor: pointer;
+}
+
+.timetablewithroute .back-btn {
+  position: absolute;
+  top: 4%;
+  background: #283f6c;
+  left: 10%;
+  font-weight: bold;
+  padding: 0.5% 1% 0.5% 1%;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.5);
+}
+
+.timetablewithroute .back-btn:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.timetableformpage {
+  width: 100%;
+  position: relative;
+}
+
+.timetableformpage h1 {
+  text-align: center;
+}
+
+.timetableformpage h2 {
+  text-align: center;
+}
+
+.timetableformpage form {
+  background: #33518b;
+  color: #fff;
+  width: 90%;
+  border-radius: 8px;
+  margin: 1% auto;
+  padding: 2% 0 2% 0;
+}
+
+.timetableformpage form h3 {
+  margin-left: 2%;
+  font-size: 1.5em;
+  position: relative;
+}
+
+.timetableformpage form h3::after {
+  display: block;
+  content: "";
+  width: 95%;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.timetableformpage form .dates {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.timetableformpage form .dates p {
+  font-weight: bold;
+}
+
+.timetableformpage form .dateinput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.timetableformpage form .dateinput p {
+  width: 50%;
+}
+
+.timetableformpage form .dateinput input {
+  margin-left: 2%;
+}
+
+.timetableformpage form .pricetable-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.timetableformpage form .pricetable-label label {
+  margin-right: 2%;
+  font-weight: bold;
+}
+
+.timetableformpage form .pax-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.timetableformpage form .pax-label label {
+  margin-right: 2%;
+  font-weight: bold;
+}
+
+.timetableformpage form .extra-items-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: bold;
+}
+
+.timetableformpage form .special-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: bold;
+}
+
+.timetableformpage form .submit-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.timetableformpage form .submit-btn button {
+  width: 210px;
+  height: 46px;
+  margin: 2% auto 1% auto;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.25em;
+  -webkit-box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+}
+
+.timetableformpage .delete-btn {
+  position: absolute;
+  font-size: 2em;
+  top: 10%;
+  right: 5%;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.timetableformpage .delete-btn:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.timetableformpage .back-btn {
+  position: absolute;
+  top: 10%;
+  background: #283f6c;
+  left: 5%;
+  font-weight: bold;
+  padding: 0.5% 1% 0.5% 1%;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.5);
+}
+
+.timetableformpage .back-btn:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-transition: 500ms;
+  transition: 500ms;
 }
 
 .pricetablespage {

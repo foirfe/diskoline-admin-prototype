@@ -19,11 +19,11 @@ export default function TimetableNew() {
     navigate("/fartplaner");
   }
   return (
-    <div className="page timetablepage">
+    <div className="timetableformpage">
       <Helmet>
         <title>Ny fartplan | Disko Line Admin</title>
       </Helmet>
-      <button onClick={handleGoBack}>Tilbage</button>
+      <button className="back-btn" onClick={handleGoBack}>Tilbage</button>
       <h1>Fartplaner</h1>
       <h2>Opret ny fartplan</h2>
       <TimeTableForm saveTimetable={createTimeTable} />

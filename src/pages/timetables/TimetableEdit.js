@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { useNavigate, useParams } from "react-router-dom";
 import TimeTableForm from "../../components/TimeTableForm";
 import { timeTablesRef } from "../../firebaseConfig";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export default function TimetableEdit() {
   const params = useParams(); // url parameter
@@ -42,16 +43,15 @@ export default function TimetableEdit() {
     navigate("/fartplaner");
   }
   return (
-    <section className="page routepage">
+    <section className="timetableformpage">
       <Helmet>
         <title>Redigér Fartplan | Disko Line Admin</title>
       </Helmet>
-      <h1 className="text-center">Redigér fartplan</h1>
-      <button onClick={handleGoBack}>Tilbage</button>
+      <h1>Fartplaner</h1>
+      <h2 className="text-center">Redigér fartplan</h2>
+      <button className="back-btn" onClick={handleGoBack}>Tilbage</button>
       <TimeTableForm saveTimetable={handleSubmit} timeTable={timetable} />
-      <button className="btn-outline" onClick={deleteTimetable}>
-        Slet fartplan
-      </button>
+      <DeleteIcon className="delete-btn" onClick={deleteTimetable} />
     </section>
   );
 }

@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import { useNavigate, useParams } from "react-router-dom";
 import { timeTablesRef } from "../../firebaseConfig";
 import { Helmet } from "react-helmet";
+import EditIcon from "@mui/icons-material/Edit";
 
 export default function TimetableRoute() {
   const [timetables, setTimetables] = useState([]);
@@ -42,23 +43,31 @@ export default function TimetableRoute() {
       <Helmet>
         <title>Fartplaner | Disko Line Admin</title>
       </Helmet>
-      <button onClick={handleGoBack}>Tilbage</button>
+      <button className="back-btn" onClick={handleGoBack}>Tilbage</button>
       <h1>Fartplaner</h1>
-
+      <div className="timetables">
       {timetables.map((timetable) => (
         <div
-          key={timetable.id}
-          className="timetable"
-          onClick={function () {
-            navigate(`/fartplaner/redigere/${timetable.id}`);
-          }}
+        key={timetable.id}
+        className="timetable"
+        onClick={function () {
+          navigate(`/fartplaner/redigere/${timetable.id}`);
+        }}
         >
+          <div className="timetable-panel">
           <h3>
             {formatDate(timetable.startDate)} - {formatDate(timetable.endDate)}
           </h3>
+          <div className="pencil-icon">
+                <EditIcon />
+              </div>
+          </div>
         </div>
       ))}
-      <button onClick={handleNewTimeTable}>Ny fartplan</button>
+      </div>
+      <div className="newtimetable-btn">
+      <button  onClick={handleNewTimeTable}>Ny fartplan</button>
+      </div>
     </div>
   );
 }

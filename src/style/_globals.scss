@@ -24,6 +24,25 @@ button {
   color: $white;
   background: $buttons;
 }
+
+.areaselectedpage{
+  position: relative;
+}
+.change-area-btn{
+  position: absolute;
+  top: 2%;
+  background: #283f6c;
+  left: 2%;
+  font-weight: bold;
+  padding: 0.5% 1% 0.5% 1%;
+  border-radius: 8px;
+  box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.5);
+  &:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 500ms;
+  }
+}
 .app {
   display: flex;
 }

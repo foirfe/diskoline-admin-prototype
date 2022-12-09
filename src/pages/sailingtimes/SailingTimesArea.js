@@ -23,7 +23,7 @@ export default function SailingTimesArea() {
   }, []);
 
   return (
-    <div className="areselectedpage sailingtimespage">
+    <div className="areaselectedpage sailingtimespage">
       <Helmet>
         <title>{`Sejltider for ${area.danish_name} | Disko Line Admin`}</title>
       </Helmet>

@@ -5,5 +5,5 @@ export default function BackButton() {
       window.location.reload(false);
     }
   }
-  return <button onClick={handleGoBack}>Tilbage</button>;
+  return <button className="change-area-btn" onClick={handleGoBack}>Skift område</button>;
 }

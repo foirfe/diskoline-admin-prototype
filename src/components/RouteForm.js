@@ -58,7 +58,7 @@ export default function RouteForm({ saveRoute, route }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
+      <label className="label-name">
         Navn på rute:
         <input
           type="text"
@@ -85,7 +85,9 @@ export default function RouteForm({ saveRoute, route }) {
         ))}
       </div>
       <p className="text-error">{errorMessage}</p>
+      <div className="submit-btn">
       <button type="submit">Gem Rute</button>
+        </div>
     </form>
   );
 }

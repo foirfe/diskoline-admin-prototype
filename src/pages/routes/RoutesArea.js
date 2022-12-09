@@ -68,9 +68,11 @@ export default function RoutesArea() {
           </div>
         ))}
       </div>
-      <button className="newroute-btn" onClick={handleNavigateToNewRoute}>
+      <div className="newroute-btn">
+      <button  onClick={handleNavigateToNewRoute}>
         Opret ny rute
       </button>
+      </div>
     </div>
   );
 }

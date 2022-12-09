@@ -48,18 +48,19 @@
     }
   }
   .newroute-btn {
-    position: absolute;
-    font-weight: bold;
-    font-size: 1.25em;
-    border-radius: 8px;
-    padding: 1% 2% 1% 2%;
-    bottom: 15%;
-    left: 45%;
-    -webkit-box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
-    box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
-    &:hover {
-      cursor: pointer;
+   display: flex;
+ 
+    button{
+      width: 210px;
+      height: 46px;
+      margin: 0 auto;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.25em;
+      box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
@@ -102,7 +103,7 @@
       font-weight: bold;
       text-decoration: underline;
     }
-    label {
+    .label-name {
       display: flex;
       justify-content: space-between;
       width: 33%;
@@ -126,17 +127,20 @@
       .label-box {
         margin: 1% 2% 1% 2%;
         width: 25%;
-        background-color: rgba(59, 89, 78, 0.385);
+        background-color: $icons;
         border-radius: 8px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
           rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-        &:hover {
-          cursor: pointer;
+        .label-stop{
+          &:hover{
+            cursor: pointer;
+          }
         }
         .stop-code {
           margin: 0;
-          padding: 20%;
+          padding-top: 5%;
           font-size: 1.25em;
+          font-weight: bold;
         }
         .stop-name {
           margin-top: 0.5%;
@@ -146,7 +150,6 @@
       input:checked + div {
         border-radius: 8px;
         width: 100%;
-        padding: 2%;
         background-color: #1d3029d3;
         opacity: 0.9;
         box-shadow: rgba(35, 35, 52, 0.365) 0px 30px 60px -12px inset,
@@ -158,6 +161,25 @@
         align-items: center;
         font-size: 1.25em;
       }
+    }
+  }
+  .delete-btn{
+    position: absolute;
+    font-size: 2em;
+    top: 5%;
+    right: 5%;
+    transition: 500ms;
+  }
+  .submit-btn{
+    button{
+    font-weight: bold;
+    font-size: 1.25em;
+    border-radius: 8px;
+    padding: 1% 2% 1% 2%;
+    box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+    &:hover{
+      cursor: pointer;
+    }
     }
   }
 }

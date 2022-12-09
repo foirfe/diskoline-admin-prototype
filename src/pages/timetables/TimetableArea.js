@@ -39,7 +39,7 @@ export default function TimetableArea() {
   }, []);
 
   return (
-    <div className="areselectedpage timetable_page">
+    <div className="areaselectedpage timetable_page">
       <Helmet>
         <title>Fartplaner | Disko Line Admin</title>
       </Helmet>
