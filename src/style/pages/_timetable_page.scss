@@ -1,0 +1,44 @@
+.timetable_page {
+  width: 100%;
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
+  .pick-a-route {
+    margin-left: 2%;
+    font-weight: bold;
+    font-size: 1.5em;
+    position: relative;
+    &::after {
+      display: block;
+      content: "";
+      width: 95%;
+      height: 1px;
+      background: $darkgrey;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  .routes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .route {
+    background: #9796964b;
+    width: 80%;
+    border-radius: 8px;
+    margin-bottom: 1.5%;
+    &:hover {
+      cursor: pointer;
+      background: #979696;
+      border-radius: 8px;
+    }
+    h3 {
+      margin-left: 2%;
+    }
+  }
+}

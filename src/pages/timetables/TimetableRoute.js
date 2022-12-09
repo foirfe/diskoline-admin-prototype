@@ -38,7 +38,7 @@ export default function TimetableRoute() {
     navigate(`/fartplaner/${routeId}/nyfartplan`);
   }
   return (
-    <div className="timetableselect">
+    <div className="timetablewithroute">
       <Helmet>
         <title>Fartplaner | Disko Line Admin</title>
       </Helmet>

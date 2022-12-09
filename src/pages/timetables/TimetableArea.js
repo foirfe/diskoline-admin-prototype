@@ -46,18 +46,20 @@ export default function TimetableArea() {
       <BackButton />
       <h1>Fartplaner</h1>
       <h2>{area.danish_name}</h2>
-      <h3>Vælg rute</h3>
-      {routes.map((route) => (
-        <div
-          key={route.name}
-          className="route"
-          onClick={function () {
-            navigate(`/fartplaner/${route.id}`);
-          }}
-        >
-          <h3>{route.name}</h3>
-        </div>
-      ))}
+      <h3 className="pick-a-route">Vælg rute</h3>
+      <div className="routes">
+        {routes.map((route) => (
+          <div
+            key={route.name}
+            className="route"
+            onClick={function () {
+              navigate(`/fartplaner/${route.id}`);
+            }}
+          >
+            <h3>{route.name}</h3>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

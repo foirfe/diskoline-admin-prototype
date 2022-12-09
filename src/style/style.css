@@ -782,12 +782,6 @@ button {
   display: none;
 }
 
-.routesformpage form .stops-checkboxes label {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
 .routesformpage form .stops-checkboxes .label-box {
   margin: 1% 2% 1% 2%;
   width: 25%;
@@ -834,6 +828,66 @@ button {
       -ms-flex-align: center;
           align-items: center;
   font-size: 1.25em;
+}
+
+.timetable_page {
+  width: 100%;
+}
+
+.timetable_page h1 {
+  text-align: center;
+}
+
+.timetable_page h2 {
+  text-align: center;
+}
+
+.timetable_page .pick-a-route {
+  margin-left: 2%;
+  font-weight: bold;
+  font-size: 1.5em;
+  position: relative;
+}
+
+.timetable_page .pick-a-route::after {
+  display: block;
+  content: "";
+  width: 95%;
+  height: 1px;
+  background: #4b4b4b;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.timetable_page .routes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.timetable_page .route {
+  background: #9796964b;
+  width: 80%;
+  border-radius: 8px;
+  margin-bottom: 1.5%;
+}
+
+.timetable_page .route:hover {
+  cursor: pointer;
+  background: #979696;
+  border-radius: 8px;
+}
+
+.timetable_page .route h3 {
+  margin-left: 2%;
 }
 
 .pricetablespage {
