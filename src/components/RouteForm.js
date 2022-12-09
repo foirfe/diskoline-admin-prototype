@@ -33,29 +33,29 @@ export default function RouteForm({ saveRoute, route }) {
   }, [route]); // useEffect is called every time post changes.
   function handleSubmit(event) {
     event.preventDefault();
-  
-      const formData = {
-        // create a new objebt to hold the value from states / input fields
-        name: name,
-        stops: stopsToPick,
-      };
 
-      const validForm = formData.name; // will return false if one of the properties doesn't have a value
-      if (validForm) {
-        saveRoute(formData);
-      } else {
-        setErrorMessage("Navn på rute skal være angivet");
-      }
+    const formData = {
+      // create a new objebt to hold the value from states / input fields
+      name: name,
+      stops: stopsToPick,
+    };
+
+    const validForm = formData.name; // will return false if one of the properties doesn't have a value
+    if (validForm) {
+      saveRoute(formData);
+    } else {
+      setErrorMessage("Navn på rute skal være angivet");
     }
-    function handleChange(e){
-       const { value, checked } = e.target;
-      if(checked){
-        stopsToPick.push(value)
-      } else {
-        stopsToPick.pop(value)
-      }
+  }
+  function handleChange(e) {
+    const { value, checked } = e.target;
+    if (checked) {
+      stopsToPick.push(value);
+    } else {
+      stopsToPick.pop(value);
     }
-    
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <label>
@@ -66,18 +66,24 @@ export default function RouteForm({ saveRoute, route }) {
           onChange={(e) => setName(e.target.value)}
         />
       </label>
-      Vælg stoppesteder til rute
-      {stops.map((stop) => (
-        <label key={stop.danish_name}>
-          {stop.danish_name} {stop.code}
-          <input
-            type="checkbox"
-            value={stop.danish_name}
-            onChange={handleChange}
-            
-          />
-        </label>
-      ))}
+      <p className="checkboxes-headline"> Vælg stoppesteder til rute</p>
+      <div className="stops-checkboxes">
+        {stops.map((stop) => (
+          <div className="label-box">
+            <label key={stop.danish_name} className="label-stop">
+              <input
+                type="checkbox"
+                value={stop.danish_name}
+                onChange={handleChange}
+              />
+              <div className="checkbox-text">
+                <p className="stop-code">{stop.code}</p>
+                <p className="stop-name">{stop.danish_name}</p>
+              </div>
+            </label>
+          </div>
+        ))}
+      </div>
       <p className="text-error">{errorMessage}</p>
       <button type="submit">Gem Rute</button>
     </form>

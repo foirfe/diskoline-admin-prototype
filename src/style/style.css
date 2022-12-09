@@ -414,6 +414,7 @@ button {
   margin: 0 auto;
   border-radius: 8px;
   font-weight: bold;
+  font-size: 1.25em;
   -webkit-box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
   box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
 }
@@ -724,10 +725,26 @@ button {
 .routesformpage form {
   color: #fff;
   background: #33518b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 90%;
   border-radius: 8px;
   margin: 0 auto;
   padding: 2% 0 1% 0;
+}
+
+.routesformpage form .checkboxes-headline {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .routesformpage form label {
@@ -738,6 +755,7 @@ button {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 33%;
+  font-size: 1.5em;
   font-weight: bold;
   margin-bottom: 1%;
 }
@@ -746,5 +764,75 @@ button {
   width: 50%;
   font-weight: bold;
   font-size: 1.05em;
+}
+
+.routesformpage form .stops-checkboxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 50%;
+}
+
+.routesformpage form .stops-checkboxes input[type="checkbox"] {
+  display: none;
+}
+
+.routesformpage form .stops-checkboxes label {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.routesformpage form .stops-checkboxes .label-box {
+  margin: 1% 2% 1% 2%;
+  width: 25%;
+  background-color: rgba(59, 89, 78, 0.385);
+  border-radius: 8px;
+  -webkit-box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+          box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.routesformpage form .stops-checkboxes .label-box:hover {
+  cursor: pointer;
+}
+
+.routesformpage form .stops-checkboxes .label-box .stop-code {
+  margin: 0;
+  padding: 20%;
+  font-size: 1.25em;
+}
+
+.routesformpage form .stops-checkboxes .label-box .stop-name {
+  margin-top: 0.5%;
+  font-size: 0.75em;
+}
+
+.routesformpage form .stops-checkboxes input:checked + div {
+  border-radius: 8px;
+  width: 100%;
+  padding: 2%;
+  background-color: #1d3029d3;
+  opacity: 0.9;
+  -webkit-box-shadow: rgba(35, 35, 52, 0.365) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+          box-shadow: rgba(35, 35, 52, 0.365) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.routesformpage form .stops-checkboxes .checkbox-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.25em;
 }
 /*# sourceMappingURL=style.css.map */
