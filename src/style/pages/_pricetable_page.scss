@@ -1,0 +1,26 @@
+.pricetablespage {
+  width: 100%;
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
+  .pricetables {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .pricetable {
+      background: #979696;
+      border-radius: 8px;
+      width: 50%;
+      margin: 1% 0 1% 0;
+      h3 {
+        margin-left: 2%;
+      }
+    }
+  }
+  p {
+    text-align: center;
+  }
+}

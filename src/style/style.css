@@ -835,4 +835,60 @@ button {
           align-items: center;
   font-size: 1.25em;
 }
+
+.pricetablespage {
+  width: 100%;
+}
+
+.pricetablespage h1 {
+  text-align: center;
+}
+
+.pricetablespage h2 {
+  text-align: center;
+}
+
+.pricetablespage .pricetables {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.pricetablespage .pricetables .pricetable {
+  background: #979696;
+  border-radius: 8px;
+  width: 50%;
+  margin: 1% 0 1% 0;
+}
+
+.pricetablespage .pricetables .pricetable h3 {
+  margin-left: 2%;
+}
+
+.pricetablespage p {
+  text-align: center;
+}
+
+.sailingtimespage {
+  width: 100%;
+}
+
+.sailingtimespage h1 {
+  text-align: center;
+}
+
+.sailingtimespage h2 {
+  text-align: center;
+}
+
+.sailingtimespage p {
+  text-align: center;
+}
 /*# sourceMappingURL=style.css.map */

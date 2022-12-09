@@ -23,14 +23,14 @@ export default function SailingTimesArea() {
   }, []);
 
   return (
-    <div className="areselectedpage stopspage">
+    <div className="areselectedpage sailingtimespage">
       <Helmet>
         <title>{`Sejltider for ${area.danish_name} | Disko Line Admin`}</title>
       </Helmet>
       <BackButton />
       <h1>Sejltider</h1>
       <h2>{area.danish_name}</h2>
-      Udviklingen af denne funktion er blevet sat på pause.
+      <p>Udviklingen af denne funktion er blevet sat på pause.</p>
     </div>
   );
 }

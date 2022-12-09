@@ -44,11 +44,13 @@ export default function PricetablesArea() {
       <BackButton />
       <h1>Pristabeller</h1>
       <h2>{area.danish_name}</h2>
-      {pricetables.map((pricetable) => (
-        <div key={pricetable.name} className="pricetable">
-          <h3>{pricetable.name}</h3>
-        </div>
-      ))}
+      <div className="pricetables">
+        {pricetables.map((pricetable) => (
+          <div key={pricetable.name} className="pricetable">
+            <h3>{pricetable.name}</h3>
+          </div>
+        ))}
+      </div>
       <p>I øjeblikket kan man ikke lave nye pristabeller</p>
     </div>
   );
