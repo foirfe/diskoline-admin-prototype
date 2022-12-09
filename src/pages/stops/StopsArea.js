@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import BackButton from "../../components/BackButton";
 import { areasRef, stopsRef } from "../../firebaseConfig";
+import EditIcon from "@mui/icons-material/Edit";
 
 export default function StopsArea() {
   const [area, setArea] = useState("");
@@ -43,27 +44,34 @@ export default function StopsArea() {
     navigate("/stoppesteder/nytstoppested");
   }
   return (
-    <div className="areselectedpage stopspage">
+    <div className="areaselectedpage stopspage">
       <Helmet>
         <title>{`Stoppesteder for ${area.danish_name} | Disko Line Admin`}</title>
       </Helmet>
-      <BackButton />
       <h1>Stoppesteder</h1>
       <h2>{area.danish_name}</h2>
-      {stops.map((stop) => (
-        <div
-          key={stop.danish_name}
-          className="stop"
-          onClick={function () {
-            navigate(`/stoppesteder/${stop.id}`);
-          }}
-        >
-          <h1>
-            {stop.danish_name} {stop.code}
-          </h1>
-        </div>
-      ))}
-      <button onClick={handleNavigateToNewStop}>Nyt stoppested</button>
+      <BackButton />
+      <div className="stops-flex">
+        {stops.map((stop) => (
+          <div
+            key={stop.danish_name}
+            className="stop"
+            onClick={function () {
+              navigate(`/stoppesteder/${stop.id}`);
+            }}
+          >
+            <h3>
+              {stop.danish_name} {stop.code}
+            </h3>
+            <div className="pencil-icon">
+              <EditIcon />
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="newstop-btn">
+        <button onClick={handleNavigateToNewStop}>Nyt stoppested</button>
+      </div>
     </div>
   );
 }

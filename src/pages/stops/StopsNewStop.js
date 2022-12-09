@@ -15,7 +15,7 @@ export default function StopsNewStop() {
     navigate("/stoppesteder");
   }
   return (
-    <section className="page stopspage">
+    <section className="stopformpage stopspage">
       <Helmet>
         <title>Nyt Stoppested | Disko Line Admin</title>
       </Helmet>

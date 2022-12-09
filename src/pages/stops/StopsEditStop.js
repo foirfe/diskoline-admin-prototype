@@ -1,6 +1,7 @@
 import { doc, getDoc, updateDoc, deleteDoc } from "@firebase/firestore";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
+import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate, useParams } from "react-router-dom";
 import StopForm from "../../components/StopForm";
 import { stopsRef } from "../../firebaseConfig";
@@ -47,7 +48,7 @@ export default function StopsEditStop() {
     navigate("/stoppesteder");
   }
   return (
-    <section className="page stopspage">
+    <section className="stopformpage stopspage">
       <Helmet>
         <title>Redigér Stoppested | Disko Line Admin</title>
       </Helmet>
@@ -55,9 +56,7 @@ export default function StopsEditStop() {
       <h2 className="text-center">Redigér Stoppested</h2>
       <button onClick={handleGoBack}>Tilbage</button>
       <StopForm saveStop={handleSubmit} stop={stop} />
-      <button className="btn-outline" onClick={deletePost}>
-        Slet stoppested
-      </button>
+      <DeleteIcon className="btn-outline" onClick={deletePost} />
     </section>
   );
 }
