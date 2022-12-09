@@ -14,13 +14,19 @@ export default function StopsNewStop() {
 
     navigate("/stoppesteder");
   }
+  function handleGoBack() {
+    navigate("/stoppesteder");
+  }
   return (
     <section className="stopformpage stopspage">
       <Helmet>
         <title>Nyt Stoppested | Disko Line Admin</title>
       </Helmet>
       <h1>Stoppesteder</h1>
-      <h2 className="text-center">Opret nyt stoppested</h2>
+      <button className="back-btn" onClick={handleGoBack}>
+        Tilbage
+      </button>
+      <h2>Opret nyt stoppested</h2>
       <StopForm saveStop={createStop} />
     </section>
   );

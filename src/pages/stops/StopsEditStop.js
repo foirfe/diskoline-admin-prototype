@@ -54,9 +54,11 @@ export default function StopsEditStop() {
       </Helmet>
       <h1>Stoppesteder</h1>
       <h2 className="text-center">Redigér Stoppested</h2>
-      <button onClick={handleGoBack}>Tilbage</button>
+      <button className="back-btn" onClick={handleGoBack}>
+        Tilbage
+      </button>
       <StopForm saveStop={handleSubmit} stop={stop} />
-      <DeleteIcon className="btn-outline" onClick={deletePost} />
+      <DeleteIcon className="delete-btn" onClick={deletePost} />
     </section>
   );
 }

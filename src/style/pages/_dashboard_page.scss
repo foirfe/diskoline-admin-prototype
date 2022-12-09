@@ -19,9 +19,7 @@
     }
     img {
       width: 80%;
-      -webkit-box-shadow: 6px 4px 22px -4px rgba(0, 0, 0, 0.75);
-      -moz-box-shadow: 6px 4px 22px -4px rgba(0, 0, 0, 0.75);
-      box-shadow: 6px 4px 22px -4px rgba(0, 0, 0, 0.75);
+      border: 2px solid black;
     }
   }
   .lower-dashboard {
@@ -31,9 +29,7 @@
     div {
       text-align: center;
       img {
-        -webkit-box-shadow: 6px 4px 22px -4px rgba(0, 0, 0, 0.75);
-        -moz-box-shadow: 6px 4px 22px -4px rgba(0, 0, 0, 0.75);
-        box-shadow: 6px 4px 22px -4px rgba(0, 0, 0, 0.75);
+        border: 2px solid black;
       }
     }
   }
