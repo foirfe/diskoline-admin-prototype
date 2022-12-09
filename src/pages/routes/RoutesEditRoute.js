@@ -1,6 +1,7 @@
 import { doc, getDoc, updateDoc, deleteDoc } from "@firebase/firestore";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
+import DeleteIcon from "@mui/icons-material/Delete";
 import { useNavigate, useParams } from "react-router-dom";
 import RouteForm from "../../components/RouteForm";
 import { routesRef } from "../../firebaseConfig";
@@ -47,16 +48,16 @@ export default function RoutesEditRoute() {
     navigate("/ruter");
   }
   return (
-    <section className="page routepage">
+    <section className="routesformpage">
       <Helmet>
         <title>Redigér rute | Disko Line Admin</title>
       </Helmet>
       <h1 className="text-center">Redigér rute</h1>
-      <button onClick={handleGoBack}>Tilbage</button>
-      <RouteForm saveRoute={handleSubmit} route={route} />
-      <button className="btn-outline" onClick={deleteRoute}>
-        Slet rute
+      <button className="back-btn" onClick={handleGoBack}>
+        Tilbage
       </button>
+      <RouteForm saveRoute={handleSubmit} route={route} />
+      <DeleteIcon className="delete-btn" onClick={deleteRoute} />
     </section>
   );
 }

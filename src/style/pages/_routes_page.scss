@@ -1,0 +1,110 @@
+.routespage {
+  width: 100%;
+  position: relative;
+  h1 {
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+  }
+  .routes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .route {
+    background: #9796964b;
+    width: 80%;
+    border-radius: 8px;
+    margin-bottom: 1.5%;
+    .route-panel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &:hover {
+        cursor: pointer;
+        background: #979696;
+        border-radius: 8px;
+        .pencil-icon {
+          -webkit-animation: pulsate-bck 0.5s ease-in-out infinite both;
+          animation: pulsate-bck 0.5s ease-in-out infinite both;
+        }
+      }
+      h3 {
+        font-size: 1.5em;
+        margin-left: 2%;
+      }
+      .pencil-icon {
+        background: white;
+        border-radius: 150px;
+        height: 30px;
+        margin-right: 2.5%;
+        width: 30px;
+        padding: 0.5%;
+        svg {
+          margin: 8%;
+        }
+      }
+    }
+  }
+  .newroute-btn {
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.25em;
+    border-radius: 8px;
+    padding: 1% 2% 1% 2%;
+    bottom: 15%;
+    left: 45%;
+    -webkit-box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 1px 3px 6px 1px rgba(0, 0, 0, 0.5);
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.routesformpage {
+  width: 100%;
+  position: relative;
+  h1 {
+    text-align: center;
+  }
+  .back-btn {
+    position: absolute;
+    top: 4%;
+    background: $main-color;
+    left: 5%;
+    font-weight: bold;
+    padding: 0.5% 1% 0.5% 1%;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 1px 7px 1px rgba(0, 0, 0, 0.5);
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      transition: $speed;
+    }
+  }
+  form {
+    color: $white;
+    background: $panels-color;
+    width: 90%;
+    border-radius: 8px;
+    margin: 0 auto;
+    padding: 2% 0 1% 0;
+    label {
+      display: flex;
+      justify-content: space-between;
+      width: 33%;
+      font-weight: bold;
+      margin-bottom: 1%;
+      input {
+        width: 50%;
+        font-weight: bold;
+        font-size: 1.05em;
+      }
+    }
+  }
+}

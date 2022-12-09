@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import BackButton from "../../components/BackButton";
 import { areasRef, routesRef } from "../../firebaseConfig";
+import EditIcon from "@mui/icons-material/Edit";
 
 export default function RoutesArea() {
   const [area, setArea] = useState("");
@@ -42,25 +43,34 @@ export default function RoutesArea() {
   }
 
   return (
-    <div className="areselectedpage routepage">
+    <div className="areselectedpage routespage">
       <Helmet>
         <title>{`Ruter for ${area.danish_name} | Disko Line Admin`}</title>
       </Helmet>
       <BackButton />
       <h1>Ruter</h1>
       <h2>{area.danish_name}</h2>
-      {routes.map((route) => (
-        <div
-          key={route.name}
-          className="route"
-          onClick={function () {
-            navigate(`/ruter/${route.id}`);
-          }}
-        >
-          <h3> {route.name} </h3>
-        </div>
-      ))}
-      <button onClick={handleNavigateToNewRoute}>Tilføj ny rute</button>
+      <div className="routes">
+        {routes.map((route) => (
+          <div
+            key={route.name}
+            className="route"
+            onClick={function () {
+              navigate(`/ruter/${route.id}`);
+            }}
+          >
+            <div className="route-panel">
+              <h3> {route.name} </h3>
+              <div className="pencil-icon">
+                <EditIcon />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button className="newroute-btn" onClick={handleNavigateToNewRoute}>
+        Opret ny rute
+      </button>
     </div>
   );
 }
