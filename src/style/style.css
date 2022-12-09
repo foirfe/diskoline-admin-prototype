@@ -278,6 +278,10 @@ button {
   border-radius: 8px;
 }
 
+.dashboard_page {
+  width: 100%;
+}
+
 .dashboard_page h1 {
   text-align: center;
 }
