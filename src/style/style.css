@@ -157,6 +157,7 @@ button {
 
 .public_page .login-form label {
   font-size: 1.25em;
+  white-space: nowrap;
 }
 
 .public_page .login-form input {
