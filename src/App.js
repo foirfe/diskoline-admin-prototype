@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { onAuthStateChanged } from "firebase/auth";
 import "./style/style.css";
 import { auth } from "./firebaseConfig";
@@ -58,7 +58,7 @@ function App() {
         <Sidebar />
         <Routes>
           <Route path="/forside" element={<Dashboard />} />
-          {/*<Route path="*" element={<Navigate to="/forside" />} />*/}
+          <Route path="*" element={<Navigate to="/forside" />} />
           {/* STOPPESTEDER */}
           <Route
             path="/stoppesteder"
@@ -112,6 +112,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SignInPage />} />
         <Route path="/glemt-kode" element={<ForgottenPassword />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>
   );
