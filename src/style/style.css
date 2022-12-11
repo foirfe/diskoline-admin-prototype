@@ -58,6 +58,7 @@ button {
 
 .topbar .menu-container {
   padding-right: 4%;
+  z-index: 2;
 }
 
 .topbar .topbar-image:hover {

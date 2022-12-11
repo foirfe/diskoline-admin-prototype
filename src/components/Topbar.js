@@ -7,7 +7,6 @@ import logo from "../images/disko-line-emblem.png";
 import DropdownItem from "./DropdownItem";
 
 export default function Topbar() {
-  const [username, setUsername] = useState("User");
   const [open, setOpen] = useState(false);
   const getauth = auth;
   const navigate = useNavigate();
@@ -52,7 +51,7 @@ export default function Topbar() {
           }}
         >
           <p>
-            {username}
+            User
             {open ? `▲` : `▼`}
           </p>
         </div>
